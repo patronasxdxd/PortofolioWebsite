@@ -117,25 +117,7 @@ body:active {
       progress#progres-bar{
         width: 500px;
       }
-      
-
-
-      /* .box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 1000px;
-  height: 400px;
-
-  background: linear-gradient(
-    145deg,
-    rgba(255, 255, 255, 0.2) 0%,
-    rgba(255, 255, 255, 0.05) 100%
-  );
-  border-radius: 20px;
-  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.3),
-              -20px -20px 50px rgba(255, 255, 255, 0.5);
-} */
+    
 
 
 .box {
@@ -178,7 +160,7 @@ body:active {
       .message-bar {
   position: fixed;
   font-family: sans-serif;
-  top: 3.5%;
+  top: -10%;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
@@ -204,27 +186,11 @@ body:active {
 
     </style>
 
-<script>
-  function animateMessageBar() {
-    var messageBar = document.querySelector('.message-bar');
-    messageBar.style.top = '-20%'; 
-    setTimeout(function() {
-      messageBar.style.top = '2.5%';
-      setTimeout(function() {
-        messageBar.style.top = '-20%'; 
-      }, 5000);
-    }, 3000); 
-  }
-
-  window.onload = function() {
-    animateMessageBar();
-  };
-</script>
 
 
   
   </head>
-  <body onload="animateMessageBar()">
+  <body>
     
     
     <div class="experience">
@@ -258,7 +224,7 @@ body:active {
 
   
     <div class="message-bar">
-      <p class="message">Click and Drag to explore!</p>
+      <p class="message">Click, Drag and Zoom to explore!</p>
     </div>
 
   

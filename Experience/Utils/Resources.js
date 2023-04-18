@@ -35,10 +35,28 @@ export default class Sizes extends EventEmitter{
     }
 
     const progresbarContainer = document.querySelector('.progress-bar-container')
+    const  messageBar = document.querySelector('.message-bar');
 
 
     Loadingmanagerr.onLoad = function(){
+
+
+
         progresbarContainer.style.display = 'none';
+
+        
+        
+            messageBar.style.top = '-20%'; 
+            setTimeout(function() {
+              messageBar.style.top = '2.5%';
+              setTimeout(function() {
+                messageBar.style.top = '-20%'; 
+              }, 5000);
+            }, 1000); 
+          
+        
+        
+        
     }
 
 
