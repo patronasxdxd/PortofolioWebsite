@@ -366,7 +366,7 @@ projectDiv.addEventListener("click", function handleClick() {
       };
 
 const tween = new TWEEN.Tween(startingPosition)
- .to(targetPosition, 3000) 
+ .to(targetPosition, 2000) 
 .easing(TWEEN.Easing.Quadratic.InOut) // Use a quadratic easing function
  .onUpdate(() => {
 // Update the camera position on every frame of the animation
@@ -446,7 +446,7 @@ render();
         //  this.experience.camera.perspectiveCamera.position.y = 3;
         //  this.experience.camera.perspectiveCamera.position.x = -1;  
         const tween = new TWEEN.Tween(startingPosition)
-         .to(targetPosition, 3000) // 2000 milliseconds duration
+         .to(targetPosition, 2000) // 2000 milliseconds duration
         .easing(TWEEN.Easing.Quadratic.InOut) // Use a quadratic easing function
          .onUpdate(() => {
     // Update the camera position on every frame of the animation
@@ -492,7 +492,7 @@ render();
         //  this.experience.camera.perspectiveCamera.position.y = 3;
         //  this.experience.camera.perspectiveCamera.position.x = -1;  
         const tween = new TWEEN.Tween(startingPosition)
-         .to(targetPosition, 3000) // 2000 milliseconds duration
+         .to(targetPosition, 2000) // 2000 milliseconds duration
         .easing(TWEEN.Easing.Quadratic.InOut) // Use a quadratic easing function
          .onUpdate(() => {
     // Update the camera position on every frame of the animation

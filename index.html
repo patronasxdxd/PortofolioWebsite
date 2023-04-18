@@ -2,10 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link href="/public/favicon.ico" rel="icon" type="image/x-icon" />
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, target-densityDpi=device-dpi, minimal-ui' />
-    <!-- <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Tangerine"> -->
     <title>Patronas</title>
     <style>
 
@@ -13,10 +11,8 @@
       
 @import url(https://fonts.googleapis.com/css?family=Titillium+Web:300&effect=3d);
 
-      /* .flexboxxy{
-        display: flex;
-        flex-direction: row;
-      } */
+  
+
 
       .social-media{
         position: absolute;
@@ -81,8 +77,13 @@ body {
   text-align: center;
   color: #222;
   margin: 0;
-
+  cursor: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/836/hearthstone-cursor.png) 10 2, auto;
 }
+
+body:active {
+        cursor: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/836/hearthstone-click.png) 10 2, auto;
+      }
+
 
 .progress-bar-container{
         position: absolute;
@@ -127,6 +128,27 @@ body {
         color: white;
       }
 
+      .message-bar {
+  position: fixed;
+  font-family: sans-serif;
+  top: 3.5%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  font-size: 60px;
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2),
+              0px 20px 40px rgba(0, 0, 0, 0.3),
+              inset 0px 0px 5px rgba(255, 255, 255, 0.2),
+              inset 0px 20px 40px rgba(0, 0, 0, 0.1);
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3),
+               0px 0px 10px rgba(0, 0, 0, 0.5),
+               0px 0px 15px rgba(0, 0, 0, 0.7);
+  transition: all 2s ease-in;
+}
+
 
       
       
@@ -134,9 +156,28 @@ body {
 
     </style>
 
+<script>
+  function animateMessageBar() {
+    var messageBar = document.querySelector('.message-bar');
+    messageBar.style.top = '-20%'; 
+    setTimeout(function() {
+      messageBar.style.top = '2.5%';
+      setTimeout(function() {
+        messageBar.style.top = '-20%'; 
+      }, 5000);
+    }, 3000); 
+  }
+
+  window.onload = function() {
+    animateMessageBar();
+  };
+</script>
+
+
   
   </head>
-  <body>
+  <body onload="animateMessageBar()">
+    
     
     <div class="experience">
      
@@ -170,14 +211,16 @@ body {
 
 
   
-
+    <div class="message-bar">
+      <p class="message">Click and Drag to explore!</p>
+    </div>
 
   
   
 
     <div class="progress-bar-container">
       <canvas id="stars"></canvas>
-      <label for="progress-bar">Loading.... </label>
+      <label for="progress-bar">Loading 3d models.... (about 10-15 seconds, it's not stuck at 0)</label>
     
       <progress id="progress-bar" value="0" max="100"></progress>
       
