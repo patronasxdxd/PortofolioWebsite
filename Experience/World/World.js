@@ -16,40 +16,19 @@ export default class World extends EventEmitter {
         this.canvas = this.experience.canvas;
         this.camera = this.experience.camera;
         this.resources = this.experience.resources;
-        // this.theme = this.experience.theme;
 
        
         this.resources.on("ready", () => {
             this.environment = new Environment();
-            // this.floor = new Floor();
-            // this.Environment = new Environment();
             this.room = new Room();
-            console.log("created room");
-            console.log(this.room);
-            // this.controls = new Controls();
             this.emit("worldready");
         });
 
-        // this.theme.on("switch", (theme) => {
-        //     this.switchTheme(theme);
-        // });
-
-        // this.sizes.on("switchdevice", (device) => {
-        //     this.switchDevice(device);
-        // });
+    
     }
 
-    // switchTheme(theme) {
-    //     if (this.environment) {
-    //         this.environment.switchTheme(theme);
-    //     }
-    // }
 
-    // switchDevice(device) {
-    //     if (this.controls) {
-    //         this.controls.switchDevice(device);
-    //     }
-    // }
+
 
     resize() {}
 

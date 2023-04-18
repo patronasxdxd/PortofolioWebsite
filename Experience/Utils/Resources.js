@@ -27,8 +27,8 @@ export default class Sizes extends EventEmitter{
     const Loadingmanagerr = new THREE.LoadingManager();
 
 
-    Loadingmanagerr.onProgress = function(url,loaded,total){
 
+    Loadingmanagerr.onProgress = function(url,loaded,total){
         progresbar.value = (loaded / total) * 100;
         percentage.textContent = `${Math.floor(progresbar.value)}%`;
 
