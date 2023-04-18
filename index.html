@@ -120,35 +120,30 @@ body:active {
     
 
 
-.box {
-  display: flex;
-  flex-direction: column;
-  row-gap: 15px;
-  justify-content: center;
-  align-items: center;
-  width: 800px;
-  height: 450px;
-  background: linear-gradient(
-    145deg,
-    rgba(255, 255, 255, 0.2) 0%,
-    rgba(255, 255, 255, 0.05) 100%
-  );
-  border-radius: 20px;
-  box-shadow: 0 0 50px rgba(0, 0, 0, 0.3),
-              inset 0 0 50px rgba(255, 255, 255, 0.5);
-          
-              
-}
-
-
-
+      .box {
+        display: flex;
+        flex-direction: column;
+        row-gap: 15px;
+        justify-content: center;
+        align-items: center;
+        width: 800px;
+        height: 450px;
+        background: linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.2) 0%,
+          rgba(255, 255, 255, 0.05) 100%
+        );
+        border-radius: 20px;
+        box-shadow: 0 0 50px rgba(0, 0, 0, 0.3),
+                    inset 0 0 50px rgba(255, 255, 255, 0.5);
+                
+                    
+      }
 
       label {
-        
+        pointer-events: none;
         color: white;
         font-size: 3rem;
-        
-    
       }
 
       .progress-bar-container #progress-percentage {
@@ -158,32 +153,26 @@ body:active {
       }
 
       .message-bar {
-  position: fixed;
-  font-family: sans-serif;
-  top: -10%;
-  width: 100%;
-  background-color: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-  color: #fff;
-  font-size: 60px;
-  padding: 10px;
-  border-radius: 15px;
-  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2),
-              0px 20px 40px rgba(0, 0, 0, 0.3),
-              inset 0px 0px 5px rgba(255, 255, 255, 0.2),
-              inset 0px 20px 40px rgba(0, 0, 0, 0.1);
-  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3),
-               0px 0px 10px rgba(0, 0, 0, 0.5),
-               0px 0px 15px rgba(0, 0, 0, 0.7);
-  transition: all 2s ease-in;
-  
-}
-
-
-   
-      
-
-
+        position: fixed;
+        font-family: sans-serif;
+        top: -10%;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        color: #fff;
+        font-size: 60px;
+        padding: 10px;
+        border-radius: 15px;
+        box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2),
+                    0px 20px 40px rgba(0, 0, 0, 0.3),
+                    inset 0px 0px 5px rgba(255, 255, 255, 0.2),
+                    inset 0px 20px 40px rgba(0, 0, 0, 0.1);
+        text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3),
+                    0px 0px 10px rgba(0, 0, 0, 0.5),
+                    0px 0px 15px rgba(0, 0, 0, 0.7);
+        transition: all 2s ease-in;
+ 
+      }
     </style>
 
 
