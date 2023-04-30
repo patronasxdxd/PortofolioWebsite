@@ -415,16 +415,16 @@ render();
             }
 
                    
-            const texture2 = new THREE.TextureLoader().load('/textures/bluex.jpeg');
+            // const texture2 = new THREE.TextureLoader().load('/textures/bluex.jpeg');
 
 
-            if (child.name === "Cube072") {
+            // if (child.name === "Cube072") {
     
-                //material038
-                child.material = new THREE.MeshBasicMaterial({
-                    map: texture2,
-                });
-            }
+            //     //material038
+            //     child.material = new THREE.MeshBasicMaterial({
+            //         map: texture2,
+            //     });
+            // }
 
 
 
