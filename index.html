@@ -9,9 +9,9 @@
 
 
       
-@import url(https://fonts.googleapis.com/css?family=Titillium+Web:300&effect=3d);
+      @import url(https://fonts.googleapis.com/css?family=Titillium+Web:300&effect=3d);
 
-  
+        
 
 
      
@@ -70,17 +70,17 @@
   height: 100%
 }
 
-body {
-  height: 100%;
-  text-align: center;
-  color: #222;
-  margin: 0;
-  cursor: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/836/hearthstone-cursor.png) 10 2, auto;
-}
+    body {
+      height: 100%;
+      text-align: center;
+      color: #222;
+      margin: 0;
+      cursor: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/836/hearthstone-cursor.png) 10 2, auto;
+    }
 
-body:active {
-        cursor: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/836/hearthstone-click.png) 10 2, auto;
-      }
+    body:active {
+            cursor: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/836/hearthstone-click.png) 10 2, auto;
+          }
 
 
 .progress-bar-container{
@@ -147,6 +147,7 @@ body:active {
       }
 
       .progress-bar-container #progress-percentage {
+        
         font-size: 30px;
         font-weight: bold;
         color: white;
@@ -220,7 +221,19 @@ body:active {
 
   
 
+    <div class="progress-bar-container"> 
+      <img  style="position:relative; top: 7px" src="/public/textures/group-of-cute-kitty-cat-family-greeting-cartoon-png.png">
+      <div class="box">
+      <label for="progress-bar">Loading 3D models..</label>
     
+      <progress id="progress-bar" value="0" max="100"></progress>
+ 
+      <span id="progress-percentage">0%</span> 
+  
+      
+
+         </div>
+    </div>
 
    
     

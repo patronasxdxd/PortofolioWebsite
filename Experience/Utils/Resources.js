@@ -20,21 +20,37 @@ export default class Sizes extends EventEmitter {
   }
 
   setLoaders() {
-   
+    const percentage = document.querySelector("#progress-percentage");
+    const progresbar = document.getElementById("progress-bar");
     const Loadingmanagerr = new THREE.LoadingManager();
+
+    Loadingmanagerr.onProgress = function (url, loaded, total) {
+      progresbar.value = (loaded / total) * 100;
+      percentage.textContent = `${Math.floor(progresbar.value)}%`;
+    };
+
+    const progresbarContainer = document.querySelector(
+      ".progress-bar-container"
+    );
+   
     const messageBar = document.querySelector(".message-bar");
 
-   
     Loadingmanagerr.onLoad = function () {
-    
 
-      messageBar.style.top = "-20%";
-      setTimeout(function () {
-        messageBar.style.top = "2.5%";
-        setTimeout(function () {
-          messageBar.style.top = "-20%";
-        }, 5000);
-      }, 1000);
+
+            progresbarContainer.style.display = "none";
+
+            messageBar.style.top = "-20%";
+            setTimeout(function () {
+              messageBar.style.top = "2.5%";
+              setTimeout(function () {
+                messageBar.style.top = "-20%";
+              }, 5000);
+            }, 1000);
+
+  
+
+
     };
 
     this.loaders = {};
@@ -80,11 +96,11 @@ export default class Sizes extends EventEmitter {
     this.loaded++;
 
     if (asset.type === "glbModel") {
-        const model = file.scene; // access the loaded model's scene
-        const modelContainer = new THREE.Object3D(); // create a container for the model
-        modelContainer.add(model); // add the model to the container
-        this.experience.scene.add(modelContainer); // add the container to the scene
-      }
+    const model = file.scene; // access the loaded model's scene
+    const modelContainer = new THREE.Object3D(); // create a container for the model
+    modelContainer.add(model); // add the model to the container
+    this.experience.scene.add(modelContainer); // add the container to the scene
+  }
 
     if (this.loaded === this.queue) {
       this.emit("ready");
