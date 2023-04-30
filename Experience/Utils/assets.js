@@ -1,10 +1,12 @@
 export default [
  
+
     {
-        name: "roo123m",
+        name: "qweweq",
         type: "glbModel",
         path: "/models/floor.glb",
     },
+
     {
         name: "room",
         type: "glbModel",
@@ -15,6 +17,12 @@ export default [
         type: "glbModel",
         path: "/models/seaFloor.glb",
     },
+    {
+        name: "qwe",
+        type: "glbModel",
+        path: "/models/boat.glb",
+    },
+
     {
         name: "123",
         type: "glbModel",
@@ -44,10 +52,22 @@ export default [
 
 
     {
-        name: "qwe",
+        name: "monster",
         type: "glbModel",
         path: "/models/monster.glb",
     },
+    {
+        name: "dragon",
+        type: "glbModel",
+        path: "/models/dragon.glb",
+    },
+
+    {
+        name: "qwe",
+        type: "glbModel",
+        path: "/models/hearthstone.glb",
+    },
+
 
 
 ]

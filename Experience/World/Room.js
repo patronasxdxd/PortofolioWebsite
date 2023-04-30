@@ -14,11 +14,16 @@ export default class Room {
         this.resources = this.experience.resources;
         this.time = this.experience.time;
         this.room = this.resources.items.room;
+        this.monster = this.resources.items.monster;
+        this.dragon = this.resources.items.dragon
         this.raycaster = new THREE.Raycaster()
     
         console.log(this.room);
         this.debug = this.experience.debug
         this.actualRoom = this.room.scene;
+        this.actualmonster = this.monster.scene;
+        this.actualDragon = this.dragon.scene;
+
         this.tween = new TWEEN.Tween();
         this.sizes = this.experience.sizes;
         this.camera= this.experience.camera;
@@ -26,7 +31,8 @@ export default class Room {
         console.log(this.actualRoom);
         this.cursor = new THREE.Vector2()
         console.log(this.experience,"dawdw")
-        // this.roomChildren = {};
+     
+        
         this.textureSocial = new THREE.TextureLoader().load('/textures/phonebg.webp');
         // this.projectMenu = new THREE.TextureLoader().load('/textures/project1.png');
         // this.projectMenu.wrapS = THREE.RepeatWrapping;
@@ -428,7 +434,7 @@ render();
 
 
 
-            this.playchess();
+          
 
 
             const socialDiv = document.getElementById("Projects");
@@ -512,12 +518,7 @@ function render() {
 }
 render();
         
-            //This moves the tv xddd
-        // this.room.scene.children[1].position.y = 10
-
-       
-
-
+        
         
 
         }.bind(this));
@@ -527,434 +528,50 @@ render();
 
 
         
-        // const width = 0.5;
-        // const height = 0.7;
-        // const intensity = 1;
-        // const rectLight = new THREE.RectAreaLight(
-        //     0xffffff,
-        //     intensity,
-        //     width,
-        //     height
-        // );
-        // rectLight.position.set(7.68244, 7, 0.5);
-        // rectLight.rotation.x = -Math.PI / 2;
-        // rectLight.rotation.z = Math.PI / 4;
-        // this.actualRoom.add(rectLight);
-
-        // this.roomChildren["rectLight"] = rectLight;
-
-        // const rectLightHelper = new RectAreaLightHelper(rectLight);
-        // rectLight.add(rectLightHelper);
-        // console.log(this.room);
 
         this.scene.add(this.actualRoom);
-        // this.actualRoom.scale.set(0.11, 0.11, 0.11);
-    }
-
-    
-
-    playchess(){
-
-        console.log("dwa")
-        const crabOne = this.room.scene.getObjectByName("CrabPlayerOne");
-        const crabTwo = this.room.scene.getObjectByName("CrabPlayerTwo");
-
-       
-        const bishopMesh = this.room.scene.getObjectByName("White_Bishop003_Cylinder011");
-        const whiteQueen = this.room.scene.getObjectByName("chesspiece_queen_Cylinder013");
-        const whiteKing = this.room.scene.getObjectByName("chesspiece_king_Cylinder.012");
-        const whiteBishop2 = this.room.scene.getObjectByName("White_Bishop002_Cylinder011");
-        const whitePawn1 = this.room.scene.getObjectByName("White_Pawn015_Cylinder010");  
-        const whitePawn2 = this.room.scene.getObjectByName("White_Pawn014_Cylinder010"); 
-        const whitePawn3 = this.room.scene.getObjectByName("White_Pawn013_Cylinder010");
-        const whitePawn4 = this.room.scene.getObjectByName("White_Pawn012_Cylinder010");  
-        const whitePawn5 = this.room.scene.getObjectByName("White_Pawn011_Cylinder010"); 
-        const whitePawn6 = this.room.scene.getObjectByName("White_Pawn010_Cylinder010"); 
-        const whitePawn7 = this.room.scene.getObjectByName("White_Pawn009_Cylinder010");
-        const whitePawn8 = this.room.scene.getObjectByName("White_Pawn008_Cylinder010");  
-
-        const whiteKnight1 = this.room.scene.getObjectByName("chesspiece_knight003_Cylinder009");  
-        const whiteKnight2 = this.room.scene.getObjectByName("chesspiece_knight002_Cylinder009"); 
-
-        const whiteRook1 = this.room.scene.getObjectByName("chesspiece_rook003_Cylinder008"); 
-        const whiteRook2 = this.room.scene.getObjectByName("chesspiece_rook002_Cylinder008"); 
-
-
-
-        const blackRook1 = this.room.scene.getObjectByName("chesspiece_rook000_Cylinder007");
-        const blackRook2 = this.room.scene.getObjectByName("chesspiece_rook001_Cylinder007");
-        const blackKnight1 = this.room.scene.getObjectByName("chesspiece_knight000_Cylinder006");
-        const blackKnight2 = this.room.scene.getObjectByName("chesspiece_knight001_Cylinder006");
-        const blackPawn1 = this.room.scene.getObjectByName("White_Pawn007_Cylinder");
-        const blackPawn2 = this.room.scene.getObjectByName("White_Pawn006_Cylinder");
-        const blackPawn3 = this.room.scene.getObjectByName("White_Pawn005_Cylinder");
-        const blackPawn4 = this.room.scene.getObjectByName("White_Pawn004_Cylinder");
-        const blackPawn5 = this.room.scene.getObjectByName("White_Pawn003_Cylinder");
-        const blackPawn6 = this.room.scene.getObjectByName("White_Pawn002_Cylinder");
-        const blackPawn7 = this.room.scene.getObjectByName("White_Pawn001_Cylinder");
-        const blackPawn8 = this.room.scene.getObjectByName("White_Pawn_Cylinder");
-        const blackBischop1 = this.room.scene.getObjectByName("White_Bishop001_Cylinder001");
-        const blackBischop2 = this.room.scene.getObjectByName("White_Bishop_Cylinder001");
-        const blackQueen = this.room.scene.getObjectByName("chesspiece_queen001_Cylinder005");
-        const blackKing = this.room.scene.getObjectByName("chesspiece_king001_Cylinder002");
-    
-
-
-        let crabOnePosition = crabOne.position.clone(); // clone the position to avoid reference issues
-        let crabTwoPosition = crabTwo.position.clone();
-        let whitePawn4Position = whitePawn4.position.clone();
-        let whitePawn8Position = whitePawn8.position.clone();
-        let whiteKnight1Position = whiteKnight1.position.clone();
-        let blackKnight2Position = blackKnight2.position.clone();
-        let blackPawn5Position = blackPawn5.position.clone();
-
-
-
-
-
-     
-        let timer = 0.1
-
-
-        async function runLoop() {
-        
-            for (let index = 0; index < 120; index++) {
-              crabOne.position.z -= 0.00001;
-                
-              if (index > 36) {
-                whitePawn4.position.z -= 0.00001;
-
-              }
-              await new Promise(resolve => setTimeout(resolve, timer));
-            }
-            await walkBack()
-          }
-
-          async function walkBack() {
-            for (let index = 0; index < 120; index++) {
-              crabOne.position.z += 0.00001;
-              await new Promise(resolve => setTimeout(resolve, timer));
-            }
-          }
-
-          async function walkTo(){
-            for (let index = 0; index < 125; index++) {
-                crabTwo.position.x += 0.00001;
-                await new Promise(resolve => setTimeout(resolve, timer));
-              }
-          }
-          
-
-          async function walkBack2() {
-            for (let index = 0; index < 80; index++) {
-              crabTwo.position.z -= 0.00001;
-              await new Promise(resolve => setTimeout(resolve, timer));
-            }
-          }
-
-          async function runLoop2() {
-
-            await walkTo();
-
-            for (let index = 0; index < 80; index++) {
-            if (index < 80 ){
-            crabTwo.position.z += 0.00001;
-            }
-            
-            blackKnight2.position.z += 0.00001;
-              
-              
-              await new Promise(resolve => setTimeout(resolve, timer));
-            }
-
-
-            for (let index = 0; index < 40; index++) {
-                
-                crabTwo.position.x -= 0.00001;
-                
-        
-                blackKnight2.position.x -= 0.00001;
-                  
-                  
-                  await new Promise(resolve => setTimeout(resolve, timer));
-                }
-            walkBack2();
-
-           
-          }
-
-          async function walkTo2() {
-            for (let index = 0; index < 100; index++) {
-                crabOne.position.x -= 0.00001;
-              await new Promise(resolve => setTimeout(resolve, timer));
-            }
-          }
-
-          async function walkBack3() {
-            for (let index = 0; index < 50; index++) {
-              crabOne.position.z += 0.00001;
-              await new Promise(resolve => setTimeout(resolve,timer));
-            }
-          }
-
-          async function runLoop3() {
-
-            await walkTo2();
-
-            for (let index = 0; index < 40; index++) {
-              whiteKnight1.position.z -= 0.00001;
-              crabOne.position.z -= 0.00001;
-              await new Promise(resolve => setTimeout(resolve, timer));
-            }
-
-            for (let index = 0; index < 80; index++) {
-                whiteKnight1.position.x += 0.00001;
-                crabOne.position.x += 0.00001;
-                await new Promise(resolve => setTimeout(resolve, timer));
-              }
-
-              await walkBack3();
-
-          }
-
-
-          
-
-          async function walkTo3() {
-            for (let index = 0; index < 40; index++) {
-                crabTwo.position.x -= 0.00001;
-              await new Promise(resolve => setTimeout(resolve, timer));
-            }
-          }
-
-          async function walkBack4() {
-            for (let index = 0; index < 120; index++) {
-              crabTwo.position.z -= 0.00001;
-              await new Promise(resolve => setTimeout(resolve, timer));
-            }
-          }
-
-
-          async function runLoop4() {
-
-            await walkTo3();
-
-            for (let index = 0; index < 120; index++) {
-                if (index>35){
-                blackPawn5.position.z += 0.00001;
-                }
-
-                crabTwo.position.z += 0.00001;
-                await new Promise(resolve => setTimeout(resolve,timer));
-            }
-            await walkBack4();
-          }
-
-
-          async function runLoop5() {
-
-            for (let index = 0; index < 120; index++) {
-                crabOne.position.z -= 0.00001;
-                await new Promise(resolve => setTimeout(resolve, timer));
-              }
-
-
-              for (let index = 0; index < 40; index++) {
-                crabOne.position.z -= 0.00001;
-                crabOne.position.x += 0.00001;
-                whitePawn4.position.z -= 0.00001;
-                whitePawn4.position.x += 0.00001;
-
-                await new Promise(resolve => setTimeout(resolve, timer));
-              }
-              blackPawn5.visible = false;
-              for (let index = 0; index < 160; index++) {
-                crabOne.position.z += 0.00001;
-                await new Promise(resolve => setTimeout(resolve, timer));
-              }
-
-          }
-
-          async function runLoop6() {
-
-            for (let index = 0; index < 40; index++) {
-                crabTwo.position.x += 0.00001;
-                await new Promise(resolve => setTimeout(resolve, timer));
-              }
-
-              for (let index = 0; index < 60; index++) {
-                crabTwo.position.z += 0.00001;
-                await new Promise(resolve => setTimeout(resolve, timer));
-              }
-
-
-              for (let index = 0; index < 80; index++) {
-                blackKnight2.position.z += 0.00001;
-                crabTwo.position.z += 0.00001;
-                await new Promise(resolve => setTimeout(resolve, timer));
-              }
-
-
-              for (let index = 0; index < 40; index++) {
-                crabTwo.position.x += 0.00001;
-                blackKnight2.position.x += 0.00001;
-                await new Promise(resolve => setTimeout(resolve, timer));
-              }
-
-              for (let index = 0; index < 150; index++) {
-                crabTwo.position.z -= 0.00001;
-                await new Promise(resolve => setTimeout(resolve, timer));
-              }
-
-
-
-          }
-
-
-          async function runLoop7() {
-            for (let index = 0; index < 130; index++) {
-                crabOne.position.x += 0.00001;
-                await new Promise(resolve => setTimeout(resolve, timer));
-              }
-
-
-              for (let index = 0; index < 65; index++) {
-                crabOne.position.z -= 0.00001;
-                if (index >20) {
-                    whitePawn8.position.z -= 0.00001;
-                } 
-
-                await new Promise(resolve => setTimeout(resolve, timer));
-              }
-
-
-              for (let index = 0; index < 50; index++) {
-                crabOne.position.z += 0.00001;
-                await new Promise(resolve => setTimeout(resolve, timer));
-              }
-
-
-
-
-          }
-
-
-          async function runLoop8() {
-
-            for (let index = 0; index < 50; index++) {
-                crabTwo.position.x += 0.00001;
-                await new Promise(resolve => setTimeout(resolve, timer));
-              }
-
-              for (let index = 0; index < 80; index++) {
-                crabTwo.position.z += 0.00001;
-                await new Promise(resolve => setTimeout(resolve, timer));
-              }
-
-
-              for (let index = 0; index < 100; index++) {
-                crabTwo.position.z += 0.00001;
-                await new Promise(resolve => setTimeout(resolve, timer));
-              }
-
-
-              for (let index = 0; index < 50; index++) {
-                crabTwo.position.x -= 0.00001;
-                await new Promise(resolve => setTimeout(resolve, timer));
-              }
-
-
-              for (let index = 0; index < 40; index++) {
-                crabTwo.position.x -= 0.00002;
-                blackKnight2.position.x -= 0.00002;
-                crabTwo.position.z += 0.00001;
-                blackKnight2.position.z += 0.00001;
-                await new Promise(resolve => setTimeout(resolve, timer));
-              }
-
-              for (let index = 0; index < 50; index++) {
-                crabTwo.position.z -= 0.00001;
-                crabTwo.position.x -= 0.00001;
-                await new Promise(resolve => setTimeout(resolve, timer));
-              }
-
-
-
-          }
-
-
-        let count = 0;
-setInterval(() => {
-    
-    switch (count) {
-        case 0:
-            crabOne.position.copy(crabOnePosition);
-            crabTwo.position.copy(crabTwoPosition);
-            whitePawn4.position.copy(whitePawn4Position);
-            whitePawn8.position.copy(whitePawn8Position);
-            whiteKnight1.position.copy(whiteKnight1Position);
-            blackKnight2.position.copy(blackKnight2Position);
-            blackPawn5.position.copy(blackPawn5Position);
-            blackPawn5.visible = true;
-        runLoop()
-        
-      break;
-    case 1:
-        runLoop2()
-      break;
-    case 2:
-        runLoop3()
-      break;
-    case 3:
-        runLoop4()
-      break;
-    case 4:
-        runLoop5()
-    break;
-    case 5:
-        runLoop6()
-    break;
-    case 6:
-        runLoop7()
-        break;
-    case 7:
-        runLoop8()
-        break;
   
-    case 8:
-        //just waiting
-        break
-  }
-  count = (count + 1) % 9; // reset the count to 0 after it reaches 8
-}, 11500); // 11500 milliseconds = 11.5 seconds
-
-
-       
-          
-        
-
-
+     
     }
+
+    
+
+  
+
 
 
     setAnimation() {
-        this.mixer = new THREE.AnimationMixer(this.actualRoom);
+        this.mixer = new THREE.AnimationMixer(this.actualmonster);
 
-        // console.log(this.mixer);
 
-        this.room.animations.forEach((item, index) => {
+        this.monster.animations.forEach((item, index) => {
+          
             const objectName = item.name;
             if (
-                objectName == "dragon_armature.001Action"
-              ||   objectName == "Action.001"  ||   objectName == "Action.002" 
+              
+                 objectName == "Action.001"  ||   objectName == "Action.002" 
               ||   objectName == "Action.003" 
             ) {
               this.swim = this.mixer.clipAction(item);
               this.swim.play();
             }
           });
-      
 
+          this.mixer2 = new THREE.AnimationMixer(this.actualDragon);
+
+          this.dragon.animations.forEach((item, index) => {
+          
+            const objectName = item.name;
+            if (
+                objectName == "dragon_armature.001Action"
+      
+            ) {
+              this.swim = this.mixer2.clipAction(item);
+              this.swim.play();
+            }
+          });
+
+    
        
           
           
@@ -965,6 +582,7 @@ setInterval(() => {
 
     update() {
         this.mixer.update(this.time.delta * 0.0009);
+        this.mixer2.update(this.time.delta * 0.0009);
 
     }
 
