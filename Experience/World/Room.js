@@ -119,7 +119,7 @@ export default class Room {
             // this.skillsHitBox,
             this.mediabuttonsHitBoxes,
             this.project1,
-            // this.project2,  
+            this.project2,  
             // this.project3,
             // this.project4,
             // this.project5,
@@ -140,9 +140,6 @@ export default class Room {
 
         if(this.intersectsObjects.length)
         {
-
-          console.log(123);
-
           this.selectedModel = this.intersectsObjects[ 0 ].object
 
           console.log(this.intersectsObjects);
@@ -153,7 +150,12 @@ export default class Room {
                     case 
                     this.project1: 
                     window.open(
-                      "https://www.linkedin.com/in/gilleszwijsen/", "_blank");
+                      "https://github.com/patronasxdxd/HearthstoneWeb3/tree/main", "_blank");
+                    break;
+                    case 
+                    this.project2: 
+                    window.open(
+                      "https://github.com/patronasxdxd/NPM_Package_Canvas", "_blank");
                     break;
                     case 
                     this.media1: console.log("camera")
@@ -315,10 +317,29 @@ export default class Room {
         this.mediabuttonsHitBoxes.visible = false
         this.project1.visible = false;
 
+
+        this.projectHitBoxGeometry4 = new THREE.PlaneGeometry( 1.5, 0.435 )
+        this.project2 = new THREE.Mesh(
+          this.projectHitBoxGeometry4,
+          this.hitBoxMaterial
+      )
+
+
+      this.project2.rotation.y = Math.PI / -2;
+      this.project2.position.set(-11,-0.25,-3.52)
+
+    
+
+
+        this.mediabuttonsHitBoxes.add(this.media1,this.media2,this.media3,this.media4,this.media5,this.media6)
+        this.mediabuttonsHitBoxes.visible = false
+        this.project1.visible = false;
+        this.project2.visible = false;
+
         
 
 
-        this.scene.add(this.aboutMeBoxes,this.mediabuttonsHitBoxes,this.project1)
+        this.scene.add(this.aboutMeBoxes,this.mediabuttonsHitBoxes,this.project1,this.project2)
 
         
         this.actualRoom.children.forEach((child) => {
